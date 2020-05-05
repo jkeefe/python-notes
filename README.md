@@ -2,6 +2,12 @@
 
 Where I keep my Python notes for starting projects
 
+## Setting up pipenv
+
+I've installed using `pip install --user pipenv`
+
+Also importantly added `export PIPENV_VENV_IN_PROJECT=1` to my `.bash_profile`
+
 ## Kicking off a project
 
 ### Make a git repo
@@ -14,6 +20,7 @@ Where I keep my Python notes for starting projects
 
 - `conda deactivate` (until I get rid of conda as a default)
 - `pipenv install`
+- `pipenv shell`
 - `pipenv install jupyterlab`
 - `pipenv run jupyter lab`
 
@@ -39,3 +46,14 @@ Just don't use spaces in the `.env` file. So:
 ```bash
 DATABASE_PASSWORD=`sekrit`
 ```
+
+### Jupter Lab uses wrong path
+
+Can't get Jupyter Lab to recognize the modules I install in the environment. It's not referencing the `kernel.json` file in the environment, but looks to a more global version instead.
+
+Jupyter Notebook works.
+
+
+
+
+
