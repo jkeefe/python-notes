@@ -4,9 +4,15 @@ Where I keep my Python notes for starting projects
 
 ## Setting up pipenv
 
-I've installed using `brew install pipenv`
+I've installed using `pip install pipenv`
 
 Also importantly added `export PIPENV_VENV_IN_PROJECT=1` to my `.bash_profile`
+
+### Installing Python things
+
+- `brew install` will install at the system level. So `pyenv` (the python picker) was done this way
+- `pip install` will install into the currently active pyenv python version. So pick this for global things per python version, like `pip install pipenv`.
+- `pipenv install` will install dependencies into the current project. 
 
 ## Kicking off a project
 
