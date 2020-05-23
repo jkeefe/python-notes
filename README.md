@@ -4,7 +4,7 @@ Where I keep my Python notes for starting projects
 
 ## Setting up pipenv
 
-I've installed using `pip install --user pipenv`
+I've installed using `brew install pipenv`
 
 Also importantly added `export PIPENV_VENV_IN_PROJECT=1` to my `.bash_profile`
 
@@ -18,15 +18,14 @@ Also importantly added `export PIPENV_VENV_IN_PROJECT=1` to my `.bash_profile`
 
 ### Get python project set up
 
-- `conda deactivate` (until I get rid of conda as a default)
-- `pipenv install`
-- `pipenv shell`
 - `pipenv install jupyterlab`
 - `pipenv run jupyter lab`
 
 _NOTE: if you run into lock problems with pipenv, try adding `--skip-lock`_
 
 ### Using dotenv for environments
+
+*NOTE:  Jupyter notebook and lab both take in the variables from a .env file if it exists, so the below is not needed.*
 
 ```bash
 pipenv install python-dotenv
@@ -49,9 +48,9 @@ DATABASE_PASSWORD=`sekrit`
 
 ### Jupter Lab uses wrong path
 
-Can't get Jupyter Lab to recognize the modules I install in the environment. It's not referencing the `kernel.json` file in the environment, but looks to a more global version instead.
+With Python 3.8 I couldn't Jupyter Lab to recognize the modules I install in the environment. It's not referencing the `kernel.json` file in the environment, but looks to a more global version instead.
 
-Jupyter Notebook works.
+Jupyter Notebook works. 
 
 
 
