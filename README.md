@@ -50,7 +50,9 @@ DATABASE_PASSWORD=`sekrit`
 
 With Python 3.8 I couldn't Jupyter Lab to recognize the modules I install in the environment. It's not referencing the `kernel.json` file in the environment, but looks to a more global version instead.
 
-Jupyter Notebook works. 
+Jupyter Notebook works, and Jupyter lab works in Python 3.7.7.
+
+
 
 
 
