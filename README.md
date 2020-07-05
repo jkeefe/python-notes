@@ -2,17 +2,49 @@
 
 Where I keep my Python notes for starting projects
 
+## Installing Python things
+
+- `brew install` will install at the system level. So `pyenv` (the python picker) was done this way
+- `pip install` will install into the currently active pyenv python version. So pick this for global things per python version, like `pip install pipenv`.  
+- `pipenv install` will install dependencies into the current project. 
+
+## Setting up pyenv
+
+I use `pyenv` to manage the operating Python version. 
+
+- [Mac install](https://github.com/pyenv/pyenv#homebrew-on-macos) using Homebrew.
+- [Ubuntu install](https://github.com/pyenv/pyenv-installer) using auto-installer.
+
+Then add the requisite lines to the `.bashrc` file (it will tell you what to add).
+
+### Notes on Ubuntu install
+
+On Ubuntu 18.04, before doing the below to install Python 3.7, need to do the [following](https://code.luasoftware.com/tutorials/linux/ubuntu-pyenv-build-python-37-common-error/):
+
+```
+sudo apt-get update
+sudo apt-get install build-essential libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+```
+
+### Continuing ...
+
+Then:
+
+```
+pyenv install 3.7.8
+pyenv global 3.7.8
+pyenv versions
+```
+
+
 ## Setting up pipenv
+
+I use `pipenv` to manage the dependencies for each project. I prefer to keep those dependencies in the project folder, which these steps allow.
 
 I've installed using `pip install pipenv`
 
 Also importantly added `export PIPENV_VENV_IN_PROJECT=1` to my `.bash_profile`
 
-### Installing Python things
-
-- `brew install` will install at the system level. So `pyenv` (the python picker) was done this way
-- `pip install` will install into the currently active pyenv python version. So pick this for global things per python version, like `pip install pipenv`.
-- `pipenv install` will install dependencies into the current project. 
 
 ## Kicking off a project
 
@@ -51,6 +83,24 @@ Just don't use spaces in the `.env` file. So:
 ```bash
 DATABASE_PASSWORD=`sekrit`
 ```
+
+## Various adventures and adjustments
+
+### Pandas Error: Could not import the lzma module
+
+```
+Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
+```
+
+I got this from early on with my fresh python install. Looked up the fix and [found this](https://github.com/pandas-dev/pandas/issues/27532#issuecomment-517259553):
+
+
+- `pip freeze > latestPackages.txt`
+- `pyenv uninstall 3.7.3`
+- `brew install xz` (This is how you pick up the correct lzma macOS)
+- `pyenv install 3.7.3`
+
+The brew command said that `xz` was already installed and up to date. So maybe it wasn't when I first installed python?
 
 ### Jupter Lab uses wrong path
 
