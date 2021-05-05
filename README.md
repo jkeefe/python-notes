@@ -12,12 +12,17 @@ Where I keep my Python notes for starting projects
 
 I use `pyenv` to manage the operating Python version. 
 
-- [Mac install](https://github.com/pyenv/pyenv#homebrew-on-macos) using Homebrew.
-- [Ubuntu install](https://github.com/pyenv/pyenv-installer) using auto-installer.
+### Mac install
 
-Then add the requisite lines to the `.bashrc` file (it will tell you what to add).
+Carefully follow the prerequisites and numbered steps in the [Mac install](https://github.com/pyenv/pyenv#homebrew-on-macos), which starts by using Homebrew.
 
-### Notes on Ubuntu install
+Then add any requisite lines to the `.bashrc` file or `.zprofile` file (it will tell you what to add).
+
+Note that you'll need to restart the shell to make it all work.
+
+### Ubuntu install
+
+Do the [Ubuntu install](https://github.com/pyenv/pyenv-installer) using auto-installer.
 
 On Ubuntu 18.04, before doing the below to install Python 3.7, need to do the [following](https://code.luasoftware.com/tutorials/linux/ubuntu-pyenv-build-python-37-common-error/):
 
@@ -26,16 +31,13 @@ sudo apt-get update
 sudo apt-get install build-essential libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
 ```
 
-### Continuing ...
-
-Then:
+### Using pyenv
 
 ```
 pyenv install 3.7.8
 pyenv global 3.7.8
 pyenv versions
 ```
-
 
 ## Setting up pipenv
 
