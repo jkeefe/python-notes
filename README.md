@@ -43,7 +43,7 @@ pyenv versions
 
 I use `pipenv` to manage the dependencies for each project. I prefer to keep those dependencies in the project folder, which these steps allow.
 
-I've installed using `pip install pipenv`
+I've installed using `pip3 install pipenv`
 
 Also importantly added `export PIPENV_VENV_IN_PROJECT=1` to my `.bash_profile`
 
