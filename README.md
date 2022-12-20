@@ -61,6 +61,10 @@ Also importantly added `export PIPENV_VENV_IN_PROJECT=1` to my `.bash_profile`
 - `pipenv install jupyterlab`
 - `pipenv run jupyter lab`
 
+or, if not using Jupyter, jut:
+
+- `pipenv install`
+
 _NOTE: if you run into lock problems with pipenv, try adding `--skip-lock`_
 
 ### Using dotenv for environments
